@@ -11,18 +11,18 @@ function _jwtgen() {
 
 function _mkcd () {
     local arg1="$1"
-	local mysudo="$2"
-	$mysudo mkdir -p $arg1; cd $arg1
+    local mysudo="$2"
+    $mysudo mkdir -p $arg1 && cd $arg1
 }
 
 function _rmed() {
-	local dir="$1"
-	find "$dir" -type d -empty
-	find "$dir" -type d -empty -delete
+    local dir="$1"
+    find "$dir" -type d -empty
+    find "$dir" -type d -empty -delete
 }
 
 function _romzip() {
-	find ./ -type f -exec sh -c 'zip -9 "${1%.*}.zip" "${1}"' -- '{}' \;
+    find ./ -type f -exec sh -c 'zip -9 "${1%.*}.zip" "${1}"' -- '{}' \;
 }
 
 function _encrypt-tar-xz() {
