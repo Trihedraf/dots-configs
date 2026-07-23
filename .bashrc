@@ -25,8 +25,8 @@ if ! shopt -oq posix; then
 fi
 
 #Add local binaries to PATH
-export PATH="~/.local/bin:$PATH"
-export PATH="~/.opencode/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 #Set micro as the editor
 if [ -f "$HOME/.local/bin/micro" ];then
