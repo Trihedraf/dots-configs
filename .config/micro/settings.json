@@ -14,5 +14,6 @@
     "saveundo": true,
     "scrollbar": true,
     "tabmovement": true,
-    "tabstospaces": true
+    "tabstospaces": true,
+    "tabsize": 4
 }
