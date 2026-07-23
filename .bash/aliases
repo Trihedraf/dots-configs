@@ -12,6 +12,8 @@ alias t='tmux attach || tmux new-session'
 alias tr='tmux-session'
 alias ftn='for f in *.mkv; do title=$(sed -e "s/.* - .* - //g" <<< "${f%.*}"); mkvpropedit "$f" -e info -s title="$title"; done'
 alias ftd='_ftd'
+alias opencode='TMPDIR=~/.opencode/tmp opencode'
+alias opencode-update='bash -c "$(curl -fsSL https://opencode.ai/install)"'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias ll='gls -lAh --full-time --color'
