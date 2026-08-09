@@ -121,7 +121,7 @@ if [ "$guiInstall" = 1 ]; then
     gamemode lib32-gamemode \
     gamescope \
     giflib lib32-giflib \
-    gst-plugins-base-libs lib32-gst-plugins-base-libs \
+    gst-plugins-base-libs \
     gtk3 lib32-gtk3 \
     libgcrypt lib32-libgcrypt \
     libgpg-error lib32-libgpg-error \
