@@ -93,8 +93,8 @@ screen \
 shellcheck \
 smartmontools \
 superfile \
-sqlite \
-lib32-sqlite \
+sqlite lib32-sqlite \
+syncthing \
 tar \
 terminus-font \
 tree \
