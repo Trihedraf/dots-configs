@@ -142,7 +142,7 @@ if [ "$guiInstall" = 1 ]; then
     sdl2-compat lib32-sdl2-compat \
     sdl3 lib32-sdl3 \
     v4l-utils lib32-v4l-utils \
-    vkd3d lib32-wkd3d \
+    vkd3d lib32-vkd3d \
     vulkan-icd-loader lib32-vulkan-icd-loader \
     vulkan-radeon lib32-vulkan-radeon \
     wine \
