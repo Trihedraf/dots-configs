@@ -31,21 +31,21 @@ done
 
 sudo pacman -Syy --noconfirm --needed git wget
 
-if [ -d "$HOME/Projects/git/linux.confs" ]; then
-    cd "$HOME/Projects/git/linux.confs"
+if [ -d "$HOME/git/linux.confs" ]; then
+    cd "$HOME/git/linux.confs" || exit
     git pull
 else
-    git clone https://github.com/Trihedraf/linux.confs "$HOME/Projects/git/linux.confs"
+    git clone https://github.com/Trihedraf/linux.confs "$HOME/git/linux.confs"
 fi
 
-if [ -d "$HOME/Projects/git/linux.confs" ]; then
-    "$HOME/Projects/git/linux.confs/scripts/configFiles.sh" -t || printf "terminal app configurations failed"
-    "$HOME/Projects/git/linux.confs/scripts/shellConf.sh" || printf "shell configuration failed"
+if [ -d "$HOME/git/linux.confs" ]; then
+    "$HOME/git/linux.confs/scripts/configFiles.sh" -t || printf "terminal app configurations failed"
+    "$HOME/git/linux.confs/scripts/shellConf.sh" || printf "shell configuration failed"
     if [ "$guiInstall" = 1 ]; then
-        "$HOME/Projects/git/linux.confs/scripts/fontInstall.sh" || printf "font install failed"
-        "$HOME/Projects/git/linux.confs/scripts/configFiles.sh" -g || printf "desktop app configurations failed"
+        "$HOME/git/linux.confs/scripts/fontInstall.sh" || printf "font install failed"
+        "$HOME/git/linux.confs/scripts/configFiles.sh" -g || printf "desktop app configurations failed"
     fi
-    if cd "$HOME/Projects/git/linux.confs"; then
+    if cd "$HOME/git/linux.confs"; then
         sudo cp -rv ./archlinux/etc/* /etc/
     fi
 fi
