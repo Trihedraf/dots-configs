@@ -7,7 +7,7 @@ git clone https://github.com/Trihedraf/linux.confs && cd linux.confs && ./instal
 # Arch System Setup Script
 
 ```bash
-bash -c "$(curl -fsSL xurl.ing/arch)" -s --etc=ON --gui=ON
+bash -c "$(curl -fsSL xurl.ing/arch)" -s --gui
 ```
 
 # Debian Trixie System Setup Script

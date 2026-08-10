@@ -1,26 +1,25 @@
 #!/bin/bash
-optList=$(getopt -o g:h --long ,gui:,help -n 'arch.sh' -- "$@")
+optList=$(getopt -o fg:h --long fingerprint,gui:,help -n 'arch.sh' -- "$@")
 eval set -- "$optList"
 
 guiInstall=0
+fingerprintInstall=0
 
 while true; do
     case "$1" in
+        -f | --fingerprint)
+            fingerprintInstall="1"
+            shift
+        ;;
         -g | --gui)
-            if [ "$2" = "ON" ]; then
-                guiInstall="1"
-                elif [ "$2" = "OFF" ]; then
-                guiInstall="0"
-            else
-                echo "Error: Invalid option '$2'. Valid options are 'ON' and 'OFF'" >&2
-            fi
-            shift 2
+            guiInstall="1"
+            shift
         ;;
         -h | --help)
             printf "Usage: %s: [OPTION]\n" "$0"
             printf "    -h,--help           This help\n\n"
-            printf "    Valid options for the following flags are ON and OFF.       Default\n"
-            printf "    -g,--gui            Enable or Disable GUI apps install.     OFF\n"
+            printf "    -f,--fingerprint    Enable Framework fingerprint setup.\n"
+            printf "    -g,--gui            Enable GUI apps install.\n"
             exit 2
         ;;
         *)
@@ -44,6 +43,9 @@ if [ -d "$HOME/git/linux.confs" ]; then
     if [ "$guiInstall" = 1 ]; then
         "$HOME/git/linux.confs/scripts/fontInstall.sh" || printf "font install failed"
         "$HOME/git/linux.confs/scripts/configFiles.sh" -g || printf "desktop app configurations failed"
+    fi
+    if [ "$fingerprintInstall" = 1 ]; then
+        "$HOME/git/linux.confs/scripts/frameworkArchFingerprintSetup.sh" || printf "fingerprint setup failed"
     fi
     if cd "$HOME/git/linux.confs"; then
         sudo cp -rv ./archlinux/etc/* /etc/
