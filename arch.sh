@@ -170,12 +170,12 @@ if [ "$guiInstall" = 1 ]; then
     xclip \
     wl-clipboard
 
-    # ART GUI Applications
-    sudo pacman -Syy --noconfirm --needed \
-    brave-bin \
-    github-desktop-plus-bin \
-    visual-studio-code-bin
+    # Manually install apps not in the Arch repos
+    "$HOME/git/linux.confs/scripts/braveInstall.sh" || printf "brave install failed"
+    "$HOME/git/linux.confs/scripts/vscodeInstall.sh" || printf "Visual Studio Code install failed"
 
     sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && echo "Flathub repo added"
+
+    echo 'Install "Desktop Plus" from FlatHub.'
 
 fi
