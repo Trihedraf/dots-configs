@@ -37,6 +37,14 @@ cpEtcConf() {
 }
 
 
+ghostty_config()
+{
+    lnHomeConf "$GITPATH/.config/ghostty" "$HOME/.config/ghostty" "config"
+    lnHomeConf "$GITPATH/.config/ghostty/themes" "$HOME/.config/ghostty/themes" "ansi-dark"
+    lnHomeConf "$GITPATH/.config/ghostty/themes" "$HOME/.config/ghostty/themes" "ansi-light"
+    printf "Ghostty config has been installed.\n"
+}
+
 kitty_config()
 {
     lnHomeConf "$GITPATH/.config/kitty" "$HOME/.config/kitty" "kitty.conf"
@@ -57,6 +65,7 @@ mango_config()
 }
 
 if [ "$guiConfigs" = 1 ]; then
+    ghostty_config
     kitty_config
     konsole_config
     mango_config

@@ -2,30 +2,28 @@ font-family = "CommitMono Nerd Font"
 window-title-font-family = "CommitMono Nerd Font"
 font-size = "14"
 
-theme = "iTerm2 Default"
-selection-foreground = "#FFFFFF"
+theme = "light:ansi-light,dark:ansi-dark"
+selection-foreground = "cell-foreground"
 selection-background = "#424242"
+split-divider-color = "#424242"
 cursor-color = "#FFFFFF"
 cursor-style = "underline"
 cursor-style-blink = "true"
 cursor-click-to-move = "true"
-
 mouse-hide-while-typing = "true"
 
-background-opacity = "0.9"
-background-blur = "true"
-
-split-divider-color = "FFFFFF"
+window-width = "120"
+window-height = "36"
+window-show-tab-bar = "always"
+gtk-wide-tabs = "false"
+macos-non-native-fullscreen = "false"
+macos-titlebar-style = "tabs"
+macos-option-as-alt = "left"
+macos-icon = "retro"
 
 scrollback-limit = "1000000"
 
-window-height = "48"
-window-width = "160"
-window-show-tab-bar = "always"
-
 clipboard-trim-trailing-spaces = "true"
-copy-on-select = "clipboard"
-right-click-action = "copy-or-paste"
 
 confirm-close-surface = "false"
 quit-after-last-window-closed = "true"
@@ -33,11 +31,6 @@ quit-after-last-window-closed = "true"
 undo-timeout = "1y"
 
 shell-integration-features = "cursor, sudo, title, ssh-env, ssh-terminfo"
-
-macos-non-native-fullscreen = "false"
-macos-titlebar-style = "tabs"
-macos-option-as-alt = "left"
-macos-icon = "retro"
 
 keybind = "super+d=new_split:right"
 keybind = "super+s=new_split:down"
