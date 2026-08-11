@@ -28,7 +28,7 @@ while true; do
     esac
 done
 
-sudo pacman -Syy --noconfirm --needed git wget
+sudo pacman -Syy --noconfirm --needed git
 
 if [ -d "$HOME/git/linux.confs" ]; then
     cd "$HOME/git/linux.confs" || exit
@@ -70,6 +70,7 @@ efibootmgr \
 ethtool \
 fail2ban \
 fastfetch \
+gimp \
 github-cli \
 gnutls lib32-gnutls \
 htop \
